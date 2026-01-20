@@ -66,9 +66,10 @@ st.markdown("#### My 3D Design Gallery")
 gallery_images = [
     ("1.Camera.jpeg", "3D-Printed Camera"),
     ("2.MugInsert.jpeg", "Mug Insert"),
-    ("4.PencilHolder.jpeg", "Pencil Holder")
+    ("4.PencilHolder.jpeg", "Pencil Holder"),
+    ("5.BrushHolder.jpeg", "Brush Holder")
 ]
-cols = st.columns(3)
+cols = st.columns(4)
 for idx, (img, caption) in enumerate(gallery_images):
     with cols[idx]:
         st.image(img, caption=caption)
