@@ -79,6 +79,23 @@ st.markdown("---")
 st.header("Project Stories & Collaboration")
 st.write("Share your design process, tips, and connect with other creators!")
 
+st.subheader("Project Spotlight: Compact Brush Holder")
+story_col1, story_col2 = st.columns([1, 2])
+with story_col1:
+    st.image("5.BrushHolder.jpeg", caption="Brush Holder Design")
+with story_col2:
+    st.markdown("""
+    **Created Date:** Jan. 19, 2026
+
+    I designed a compact brush holder to solve a space limitation at a school Chinese calligraphy event organized by my mother. With limited table space, my goal was to create a sturdy, space-saving design that also attracted students’ attention.
+
+    I measured the brushes to determine proper dimensions and structural requirements, ensuring stability and balance. I incorporated traditional Chinese festival patterns to enhance visual appeal. 
+    
+    During prototyping, I discovered issues with joint smoothness, which I corrected through sanding and reinforcing the connections. This process taught me the importance of precision and iteration in mechanical design.
+
+    In future versions, I plan to redesign the joints with a twist-lock mechanism to improve strength and ease of assembly. This project strengthened my interest in 3D printing and mechanical engineering.
+    """)
+
 # Contact Form
 st.markdown("---")
 st.subheader("Contact Me")
