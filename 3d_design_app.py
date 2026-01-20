@@ -68,21 +68,13 @@ projects = [
         "img": "1.Camera.jpeg",
         "title": "3D-Printed Camera",
         "date": "Dec. 15, 2025",
-        "story": """I designed and built a fully functional 3D-printed camera. Every part of the camera body was designed using CAD and produced with a 3D printer, including a mechanical film-dispensing system made of several interacting components. I originally planned to reuse parts from an existing camera, but when that was not possible, I redesigned the internal mechanisms from scratch, which challenged me to think more deeply about mechanical structure and function.
-
-Throughout the project, I tested multiple prototypes, measured hardware carefully, and adjusted designs to improve fit and reliability. I chose a simple, classic design that focused on functionality rather than appearance. This project taught me that engineering is an iterative process that requires patience, adaptability, and problem-solving. It strengthened my interest in mechanical engineering and motivated me to continue pursuing hands-on design projects."""
+        "story": """I designed and built a functional 3D-printed film camera as a hands-on engineering project. My original plan was to reuse parts from an existing camera, but when that wasn’t practical, I adapted by designing more components myself using CAD. Throughout the process, I faced challenges with 3D-printing limitations, including poor tolerances, weak parts, thread fitting issues, and light leaks that affected exposure. I addressed these problems through repeated redesigns, testing, and simple solutions like adjusting part thicknesses and sealing gaps with electrical tape. The project taught me the value of flexibility, simplifying designs, and learning through trial and error. It reflects my problem-solving mindset, persistence, and ability to work with limited resources to turn a complex idea into a working prototype."""
     },
     {
         "img": "2.MugInsert.jpeg",
         "title": "Mug Insert",
         "date": "Nov. 10, 2025",
         "story": "This insert transforms a standard mug into a travel-friendly organizer. The challenge was ensuring a snug fit while accounting for ceramic diameter variations."
-    },
-    {
-        "img": "3.ToyCar.jpeg",
-        "title": "Toy Car",
-        "date": "Dec. 05, 2025",
-        "story": "A fun project designing a rolling vehicle. This involved modeling moving parts like axles and wheels, ensuring they printed with enough clearance to spin freely while staying attached."
     },
     {
         "img": "4.PencilHolder.jpeg",
@@ -112,7 +104,7 @@ if 'selected_project_index' not in st.session_state:
 
 st.markdown("#### Click 'View Story' under an image to see the project details below!")
 
-cols = st.columns(5)
+cols = st.columns(len(projects))
 for idx, project in enumerate(projects):
     with cols[idx]:
         st.image(project["img"], caption=project["title"])
