@@ -44,10 +44,10 @@ st.markdown("""
 Welcome to the 3D Design Project page!
 """)
 
-# Add introduction with picture under the title
+# Add introduction with picture under the title (use st.image for compatibility)
 col1, col2 = st.columns([1, 3])
 with col1:
-    st.image("myself.jpeg", width=250)
+    st.image("myself.jpeg", width=260)
 with col2:
     st.markdown("""
     ### About Me
