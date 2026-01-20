@@ -74,7 +74,7 @@ projects = [
         "img": "2.MugInsert.jpeg",
         "title": "Mug Insert",
         "date": "Nov. 10, 2025",
-        "story": "This insert transforms a standard mug into a travel-friendly organizer. The challenge was ensuring a snug fit while accounting for ceramic diameter variations."
+        "story": "I designed a custom 3D-printed insert for my mom’s mug when it didn’t fit in her car’s cup holder. I carefully measured the dimensions of both the mug and the holder, then created a solution that allowed the mug to fit securely. Now, she can enjoy her favorite mug on her daily commute, making a small but meaningful improvement to her everyday routine."
     },
     {
         "img": "4.PencilHolder.jpeg",
