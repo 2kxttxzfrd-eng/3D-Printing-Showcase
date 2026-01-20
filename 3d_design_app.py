@@ -62,32 +62,31 @@ with col2:
 
 st.header("Gallery")
 
-st.markdown("#### My 3D Design Gallery")
-gallery_images = [
-    ("1.Camera.jpeg", "3D-Printed Camera"),
-    ("2.MugInsert.jpeg", "Mug Insert"),
-    ("4.PencilHolder.jpeg", "Pencil Holder"),
-    ("5.BrushHolder.jpeg", "Brush Holder")
-]
-cols = st.columns(4)
-for idx, (img, caption) in enumerate(gallery_images):
-    with cols[idx]:
-        st.image(img, caption=caption)
-
-st.markdown("---")
-
-st.header("Project Stories")
-st.write("Click below to reveal the full story behind the project!")
-
-st.subheader("Project Spotlight: Compact Brush Holder")
-story_col1, story_col2 = st.columns([1, 2])
-with story_col1:
-    st.image("5.BrushHolder.jpeg", caption="Brush Holder Design")
-with story_col2:
-    with st.expander("Read Project Summary"):
-        st.markdown("""
-        **Created Date:** Jan. 19, 2026
-
+# Define projects with their stories
+projects = [
+    {
+        "img": "1.Camera.jpeg",
+        "title": "3D-Printed Camera",
+        "date": "Dec. 15, 2025",
+        "story": "Designing a fully functional camera challenged me to understand optical paths and light-sealing mechanisms. I used CAD to model the body and printed it with high-density PLA to prevent light leaks."
+    },
+    {
+        "img": "2.MugInsert.jpeg",
+        "title": "Mug Insert",
+        "date": "Nov. 10, 2025",
+        "story": "This insert transforms a standard mug into a travel-friendly organizer. The challenge was ensuring a snug fit while accounting for ceramic diameter variations."
+    },
+    {
+        "img": "4.PencilHolder.jpeg",
+        "title": "Pencil Holder",
+        "date": "Oct. 05, 2025",
+        "story": "A geometric workspace organizer. I focused on clean lines and stability, experimenting with varying wall thicknesses to optimize print time and strength."
+    },
+    {
+        "img": "5.BrushHolder.jpeg",
+        "title": "Brush Holder",
+        "date": "Jan. 19, 2026",
+        "story": """
         I designed a compact brush holder to solve a space limitation at a school Chinese calligraphy event organized by my mother. With limited table space, my goal was to create a sturdy, space-saving design that also attracted students’ attention.
 
         I measured the brushes to determine proper dimensions and structural requirements, ensuring stability and balance. I incorporated traditional Chinese festival patterns to enhance visual appeal. 
@@ -95,7 +94,37 @@ with story_col2:
         During prototyping, I discovered issues with joint smoothness, which I corrected through sanding and reinforcing the connections. This process taught me the importance of precision and iteration in mechanical design.
 
         In future versions, I plan to redesign the joints with a twist-lock mechanism to improve strength and ease of assembly. This project strengthened my interest in 3D printing and mechanical engineering.
-        """)
+        """
+    }
+]
+
+# Initialize session state for selected project
+if 'selected_project_index' not in st.session_state:
+    st.session_state.selected_project_index = 3  # Default to Brush Holder
+
+st.markdown("#### Click 'View Story' under an image to see the project details below!")
+
+cols = st.columns(4)
+for idx, project in enumerate(projects):
+    with cols[idx]:
+        st.image(project["img"], caption=project["title"])
+        if st.button("View Story", key=f"btn_{idx}"):
+            st.session_state.selected_project_index = idx
+
+st.markdown("---")
+
+st.header("Project Stories")
+
+# Display the selected project story
+current_project = projects[st.session_state.selected_project_index]
+
+st.subheader(f"Project Spotlight: {current_project['title']}")
+story_col1, story_col2 = st.columns([1, 2])
+with story_col1:
+    st.image(current_project["img"], caption=current_project["title"])
+with story_col2:
+    st.markdown(f"**Created Date:** {current_project['date']}")
+    st.markdown(current_project["story"])
 
 # Contact Form
 st.markdown("---")
