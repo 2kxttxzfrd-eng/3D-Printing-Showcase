@@ -1,4 +1,5 @@
 import streamlit as st
+from datetime import datetime
 
 st.set_page_config(page_title="3D Design Project", layout="wide")
 
@@ -104,16 +105,33 @@ projects = [
     }
 ]
 
+# Find the project with the latest date
+def parse_date(date_str):
+    return datetime.strptime(date_str, "%b. %d, %Y")
+
+latest_project_index = 0
+if projects:
+    latest_date = parse_date(projects[0]["date"])
+    for i, p in enumerate(projects):
+        p_date = parse_date(p["date"])
+        if p_date > latest_date:
+            latest_date = p_date
+            latest_project_index = i
+
 # Initialize session state for selected project
 if 'selected_project_index' not in st.session_state:
-    st.session_state.selected_project_index = 3  # Default to Brush Holder
+    st.session_state.selected_project_index = latest_project_index  # Default to Newest
 
 st.markdown("#### Click 'View Story' under an image to see the project details below!")
 
 cols = st.columns(len(projects))
 for idx, project in enumerate(projects):
     with cols[idx]:
-        st.image(project["img"], caption=project["title"])
+        caption_text = project["title"]
+        if idx == latest_project_index:
+            caption_text += " 🆕"
+        
+        st.image(project["img"], caption=caption_text)
         if st.button("View Story", key=f"btn_{idx}"):
             st.session_state.selected_project_index = idx
 
