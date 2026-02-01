@@ -100,7 +100,7 @@ projects = [
     {
         "img": "6.CasioKeychain.jpeg",
         "title": "Casio Keychain",
-        "date": "Jan. 27, 2025",
+        "date": "Jan. 27, 2026",
         "story": """I created a keychain watch holder for the Casio LF20W. I got inspiration from a tamagotchi and I thought that it would be cool to make something similar with my watch. Not only does it make your bag look better but it also helps you keep track of time with the amazing feature of the watch beeping at the top of every hour. In addition, It also makes a great desk toy that helps you keep track of studying. When making this, I had to consider many things, including the materials I had available, sizing, and skill. I didn’t want something too complex that would take me days to design and something that would take hours to test print. I only had 8 large zip ties available and I used calipers to measure the dimensions. When designing these holes in pad I had to consider the tolerance of the Bambu Lab P1S and if I could get the sizing correct. To my surprise, I got it right on the first try by rounding up by .00 cm. I wanted the watch to be encased but not lost functionality so I made holes on the side so the buttons can still be accessible. There is a viewing hole on the back where the model details can be viewed. Overall, this design is sleek, minimalist, and small and the great part is it only took me a few hours to design and print."""
     }
 ]
